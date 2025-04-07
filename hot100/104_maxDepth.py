@@ -10,11 +10,14 @@ class Solution:
             return 0
         h_l = 1
         h_r = 1
+        # 递归计算左右子树的高度
         if node.left is not None:
             h_l = self.maxleftorright(node.left)+1
         if node.right is not None:
             h_r = self.maxleftorright(node.right)+1
         return max(h_l,h_r)
+
+
 
     def maxDepth(self, root: TreeNode) -> int:
         result = self.maxleftorright(root)
